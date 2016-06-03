@@ -9,6 +9,11 @@
 
 ;;(add-to-list 'load-path user-emacs-directory)
 
+(setq settings-dir
+      (expand-file-name "settings" user-emacs-directory))
+
+(add-to-list 'load-path settings-dir)
+
 ;; set meta to cmd for mac
 (setq mac-command-modifier 'meta
       mac-option-modifier nil
@@ -77,6 +82,7 @@
 	yasnippet
 	web-mode
 	flycheck
+	flycheck-pos-tip
 	json-mode
 	exec-path-from-shell
 	less-css-mode
@@ -88,6 +94,9 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+(eval-after-load 'js2-mode '(require 'setup-js2-mode))
+(require 'setup-ffip)
+(require 'setup-flycheck)
 ;; Show keystrokes in progress
 (setq echo-keystrokes 0.1)
 
@@ -104,9 +113,14 @@
 
 ;; Never insert tabs
 (set-default 'indent-tabs nil)
-(setq tab-width 2)
-(setq js-indent-level 2)
-(setq-default js2-basic-offset 2)
+(setq-default tab-width 2)
+
+(require 'mode-bindings)
+
+;; Set up web-mode
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
 
 ;; Show me empty lines after buffer end
 (set-default 'indicate-empty-lines t)
@@ -125,19 +139,45 @@
 ;; Display line number column
 (global-linum-mode 1)
 
+;; Highlight current line
+(global-hl-line-mode 1)
+
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 ;; Fire up the minor modes the theme we want going all the time everywhere
 (load-theme 'solarized t)
 (global-undo-tree-mode)
 (ido-mode t)
+
+(defun indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun cleanup-buffer ()
+  "Perform a bunch of operations on the whitespace content of a buffer.
+Including indent-buffer, which should not be called automatically on save."
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-buffer))
+
+;;
+;; Keybindings
+;;
+
+;; Find file in project
+(global-set-key (kbd "C-x o") 'find-file-in-project)
+
+;; Perform general cleanup.
+(global-set-key (kbd "C-c n") 'cleanup-buffer)
+(global-set-key (kbd "C-c C-n") 'cleanup-buffer)
+
+;; CUSTOM
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(safe-local-variable-values (quote ((tab-width 2)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
