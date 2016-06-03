@@ -119,7 +119,7 @@
 (setq column-number-mode t)
 
 ;; Display line number column
-(setq global-linum-mode t)
+(global-linum-mode 1)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
