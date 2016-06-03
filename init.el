@@ -94,6 +94,10 @@
 ;; Set column widths to 80, not 72
 (setq fill-column 80)
 
+;; Setup font and line stuff
+(set-face-attribute 'default nil :font "Input Mono" :height 140)
+(setq-default line-spacing 5)
+
 ;; Setup editorconfig
 (require 'editorconfig)
 (editorconfig-mode 1)
