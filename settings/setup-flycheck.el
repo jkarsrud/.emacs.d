@@ -8,6 +8,18 @@ clean buffer we're an order of magnitude laxer about checking."
   (setq flycheck-idle-change-delay
         (if flycheck-current-errors 0.5 30.0)))
 
+(defun my/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (file-executable-p eslint)
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+
+(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+
 ;; Each buffer gets its own idle-change-delay because of the
 ;; buffer-sensitive adjustment above.
 (make-variable-buffer-local 'flycheck-idle-change-delay)
@@ -21,9 +33,12 @@ clean buffer we're an order of magnitude laxer about checking."
                                             idle-change
                                             mode-enabled))
 
-(eval-after-load 'flycheck
-  '(custom-set-variables
-    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+;;(eval-after-load 'flycheck
+  ;;'(custom-set-variables
+    ;;'(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+
+(with-eval-after-load 'flycheck
+  (flycheck-pos-tip-mode))
 
 (defun flycheck-handle-idle-change ()
   "Handle an expired idle time since the last change.
@@ -34,5 +49,11 @@ threaded system and the forced deferred makes errors never show
 up before you execute another command."
   (flycheck-clear-idle-change-timer)
   (flycheck-buffer-automatically 'idle-change))
+
+(flycheck-add-mode 'javascript-eslint 'js2-mode)
+(flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
+
+(setq-default flycheck-temp-prefix ".flycheck")
+(setq-default flycheck-indication-mode 'left-fringe)
 
 (provide 'setup-flycheck)

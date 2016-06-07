@@ -1,3 +1,5 @@
+;; All of the js2-mode config stuff
+
 (setq-default js2-allow-rhino-new-expr-initializer nil)
 (setq-default js2-auto-indent-p nil)
 (setq-default js2-enter-indents-newline nil)
@@ -15,13 +17,12 @@
 (setq js-indent-level 2)
 (setq-default js2-basic-offset 2)
 
-
 ;; Flycheck should hande all of this
 (setq-default js2-show-parse-errors nil)
 (setq-default js2-strict-missing-semi-warning nil)
 (setq-default js2-strict-trailing-comma-warning t) ;; jshint doesn't warn about this
 
-(add-hook 'js2-mode-hook (lambda () (flycheck-mode 1)))
+(add-hook 'js2-mode-hook 'flycheck-mode)
 
 (require 'js2-refactor)
 (js2r-add-keybindings-with-prefix "C-x C-m")
