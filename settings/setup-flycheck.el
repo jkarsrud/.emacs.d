@@ -8,17 +8,25 @@ clean buffer we're an order of magnitude laxer about checking."
   (setq flycheck-idle-change-delay
         (if flycheck-current-errors 0.5 30.0)))
 
-(defun my/use-eslint-from-node-modules ()
+(defun jkarsrud/use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
                 (or (buffer-file-name) default-directory)
                 "node_modules"))
          (eslint (and root
-                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                      (expand-file-name "node_modules/.bin/eslint"
                                         root))))
     (when (file-executable-p eslint)
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
-(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+(defun jkarsrud/use-jshint-from-node-modules ()
+	(let* ((root (locate-dominating-file
+								(or (buffer-file-name) default-directory)
+								"node_modules"))
+				 (jshint (and root
+											(expand-file-name "node_modules/.bin/jshint"
+																				root))))
+		(when (file-executable-p jshint)
+			(setq-local flycheck-javascript-jshint-executable jshint))))
 
 ;; Each buffer gets its own idle-change-delay because of the
 ;; buffer-sensitive adjustment above.
@@ -27,18 +35,18 @@ clean buffer we're an order of magnitude laxer about checking."
 (add-hook 'flycheck-after-syntax-check-hook
           'magnars/adjust-flycheck-automatic-syntax-eagerness)
 
+(add-hook 'flycheck-mode-hook 'jkarsrud/use-eslint-from-node-modules)
+;; (add-hook 'flycheck-mode-hook 'jkarsrud/use-jshint-from-node-modules)
+
 ;; Remove newline checks, since they would trigger an immediate check
 ;; when we want the idle-change-delay to be in effect while editing.
 (setq flycheck-check-syntax-automatically '(save
                                             idle-change
                                             mode-enabled))
 
-;;(eval-after-load 'flycheck
-  ;;'(custom-set-variables
-    ;;'(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
-
-(with-eval-after-load 'flycheck
-  (flycheck-pos-tip-mode))
+(eval-after-load 'flycheck
+  '(custom-set-variables
+    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
 (defun flycheck-handle-idle-change ()
   "Handle an expired idle time since the last change.

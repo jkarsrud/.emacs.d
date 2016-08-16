@@ -90,6 +90,8 @@
 	less-css-mode
 	find-file-in-project
 	editorconfig
+	csharp-mode
+	yaml-mode
 	))
 
 (dolist (package my-packages)
@@ -105,6 +107,7 @@
 (eval-after-load 'js2-mode '(require 'setup-js2))
 (eval-after-load 'flycheck '(require 'setup-flycheck))
 (require 'setup-ffip)
+(require 'setup-autocomplete)
 
 ;; Show keystrokes in progress
 (setq echo-keystrokes 0.1)

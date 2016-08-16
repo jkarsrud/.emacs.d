@@ -9,4 +9,7 @@
 (add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.eslintrc$" . json-mode))
 
+;; Handlebars
+(add-to-list 'auto-mode-alist '("\\.hbs$" . web-mode))
+
 (provide 'mode-bindings)
