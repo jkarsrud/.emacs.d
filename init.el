@@ -102,7 +102,9 @@
 	(exec-path-from-shell-initialize)
 	(setq exec-path-from-shell-arguments '("-l")))
 
-;;(setq-default exec-path-from-shell-check-startup-files nil)
+;; Load up some sane defaults
+(require 'sane-defaults)
+
 
 (eval-after-load 'js2-mode '(require 'setup-js2))
 (eval-after-load 'flycheck '(require 'setup-flycheck))

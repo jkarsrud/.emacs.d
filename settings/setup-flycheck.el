@@ -61,7 +61,6 @@ up before you execute another command."
 (flycheck-add-mode 'javascript-eslint 'js2-mode)
 (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
 
-(setq-default flycheck-temp-prefix ".flycheck")
 (setq-default flycheck-indication-mode 'left-fringe)
 
 (provide 'setup-flycheck)

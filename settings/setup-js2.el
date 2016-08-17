@@ -26,11 +26,12 @@
 (setq-default sgml-attribute-offset 2)
 
 ;; Flycheck should hande all of this
-(setq-default js2-mode-show-warn-or-err nil)
+(setq-default js2-mode-show-err nil)
+(setq-default js2-mode-show-warnings nil)
 (setq-default js2-mode-show-parse-errors nil)
 (setq-default js2-mode-show-strict-warnings nil)
 
-;;(add-hook 'js2-mode-hook #'js2-mode-toggle-warnings-and-errors)
+(add-hook 'js2-mode-hook #'js2-mode-toggle-warnings-and-errors)
 
 (add-hook 'js2-mode-hook (lambda () (flycheck-mode 1)))
 
