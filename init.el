@@ -105,11 +105,14 @@
 ;; Load up some sane defaults
 (require 'sane-defaults)
 
-
 (eval-after-load 'js2-mode '(require 'setup-js2))
 (eval-after-load 'flycheck '(require 'setup-flycheck))
 (require 'setup-ffip)
 (require 'setup-autocomplete)
+(require 'setup-magit)
+
+;;key bindings
+(require 'key-bindings);
 
 ;; Show keystrokes in progress
 (setq echo-keystrokes 0.1)

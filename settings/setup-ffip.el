@@ -9,14 +9,14 @@
 
 (setq-default ffip-find-options
 							(ffip--create-exclude-find-options
-							 '(".git/"
-								 "node_modules/"
-								 "bower_components/"
-								 "elpa/"
-								 "backups/"
-								 "auto-save-list/"
-								 "tmp/"
-								 "dist/"
+							 '("/.git/"
+								 "/node_modules/"
+								 "/bower_components/"
+								 "/elpa/"
+								 "/backups/"
+								 "/auto-save-list/"
+								 "/tmp/"
+								 "/dist/"
 								 ".DS_Store")))
 
 (setq-default ffip-filename-rules '(ffip-filename-identity
