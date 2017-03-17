@@ -92,6 +92,11 @@
 	editorconfig
 	csharp-mode
 	yaml-mode
+	wakatime-mode
+	emojify
+	nginx-mode
+	coffee-mode
+	rjsx-mode
 	))
 
 (dolist (package my-packages)
@@ -110,9 +115,14 @@
 (require 'setup-ffip)
 (require 'setup-autocomplete)
 (require 'setup-magit)
-
+(require 'setup-wakatime)
+(require 'setup-nginx)
+(require 'setup-yasnippet)
 ;;key bindings
 (require 'key-bindings);
+
+;; Enable emojify
+(add-hook 'after-init-hook #'global-emojify-mode)
 
 ;; Show keystrokes in progress
 (setq echo-keystrokes 0.1)
@@ -121,8 +131,8 @@
 (setq fill-column 80)
 
 ;; Setup font and line stuff
-(set-face-attribute 'default nil :font "Input Mono" :height 140)
-(setq-default line-spacing 5)
+(set-face-attribute 'default nil :font "Fira Code" :height 140)
+(setq-default line-spacing 3)
 
 ;; Setup editorconfig
 (require 'editorconfig)
@@ -133,6 +143,7 @@
 (setq-default tab-width 2)
 
 (require 'mode-bindings)
+(require 'font-setup)
 
 ;; Set up web-mode
 (setq web-mode-markup-indent-offset 2)
@@ -195,7 +206,13 @@ Including indent-buffer, which should not be called automatically on save."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
+ '(frame-background-mode nil)
+ '(package-selected-packages
+	 (quote
+		(rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+ '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
+ '(wakatime-cli-path "/usr/local/Cellar/wakatime-cli/6.2.0/libexec/bin/wakatime"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

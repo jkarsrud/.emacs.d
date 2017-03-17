@@ -23,7 +23,7 @@
 (setq js-indent-level 2)
 (setq-default js2-basic-offset 2)
 (setq-default js-switch-indent-offset 2)
-(setq-default sgml-attribute-offset 2)
+;;(setq-default sgml-attribute-offset 2)
 (setq-default js2-indent-switch-body t)
 
 ;; Flycheck should hande all of this
@@ -32,9 +32,13 @@
 (setq-default js2-mode-show-parse-errors nil)
 (setq-default js2-mode-show-strict-warnings nil)
 
+;;(setq-default sgml-basic-offset 2)
+
+
 ;;(add-hook 'js2-mode-hook #'js2-mode-toggle-warnings-and-errors)
 
 (add-hook 'js2-mode-hook (lambda () (flycheck-mode 1)))
+(add-hook 'rjsx-mode-hook (lambda () (flycheck-mode 1)))
 
 (require 'js2-refactor)
 (js2r-add-keybindings-with-prefix "C-x C-m")
