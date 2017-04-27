@@ -11,8 +11,11 @@
 
 (setq settings-dir
       (expand-file-name "settings" user-emacs-directory))
+(setq projects-dir
+			(expand-file-name "projects" user-emacs-directory))
 
 (add-to-list 'load-path settings-dir)
+(add-to-list 'load-path projects-dir)
 
 ;; set meta to cmd for mac
 (setq mac-command-modifier 'meta
@@ -97,6 +100,7 @@
 	nginx-mode
 	coffee-mode
 	rjsx-mode
+	tide
 	))
 
 (dolist (package my-packages)
@@ -115,7 +119,7 @@
 (require 'setup-ffip)
 (require 'setup-autocomplete)
 (require 'setup-magit)
-(require 'setup-wakatime)
+;;(require 'setup-wakatime)
 (require 'setup-nginx)
 (require 'setup-yasnippet)
 ;;key bindings
@@ -144,6 +148,7 @@
 
 (require 'mode-bindings)
 (require 'font-setup)
+(require 'project-mode-bindings)
 
 ;; Set up web-mode
 (setq web-mode-markup-indent-offset 2)
@@ -210,7 +215,7 @@ Including indent-buffer, which should not be called automatically on save."
  '(frame-background-mode nil)
  '(package-selected-packages
 	 (quote
-		(rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+		(tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
  '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
  '(wakatime-cli-path "/usr/local/Cellar/wakatime-cli/6.2.0/libexec/bin/wakatime"))
 (custom-set-faces
