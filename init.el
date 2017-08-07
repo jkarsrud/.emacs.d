@@ -101,6 +101,8 @@
 	coffee-mode
 	rjsx-mode
 	tide
+	flycheck-flow
+	elixir-mode
 	))
 
 (dolist (package my-packages)
@@ -115,11 +117,12 @@
 (require 'sane-defaults)
 
 (eval-after-load 'js2-mode '(require 'setup-js2))
+(eval-after-load 'tide-mode '(require 'setup-tide))
 (eval-after-load 'flycheck '(require 'setup-flycheck))
 (require 'setup-ffip)
 (require 'setup-autocomplete)
 (require 'setup-magit)
-;;(require 'setup-wakatime)
+(require 'setup-wakatime)
 (require 'setup-nginx)
 (require 'setup-yasnippet)
 ;;key bindings
@@ -215,7 +218,7 @@ Including indent-buffer, which should not be called automatically on save."
  '(frame-background-mode nil)
  '(package-selected-packages
 	 (quote
-		(tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+		(elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
  '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
  '(wakatime-cli-path "/usr/local/Cellar/wakatime-cli/6.2.0/libexec/bin/wakatime"))
 (custom-set-faces

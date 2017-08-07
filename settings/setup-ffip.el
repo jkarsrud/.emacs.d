@@ -17,7 +17,12 @@
 								 "/auto-save-list/"
 								 "/tmp/"
 								 "/dist/"
-								 ".DS_Store")))
+								 ".DS_Store"
+								 "/_build/" ;; Phoenix
+								 "/coverage/"
+								 "/deps/" ;; Hex
+								 "/priv/" ;;
+								 )))
 
 (setq-default ffip-filename-rules '(ffip-filename-identity
 																		(ffip-filename-dashes-to-camelcase ffip-filename-camelcase-to-dashes)))
