@@ -8,6 +8,7 @@
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.eslintrc$" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.prettierrc$" . json-mode))
 
 ;; Handlebars
 (add-to-list 'auto-mode-alist '("\\.hbs$" . web-mode))

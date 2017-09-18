@@ -103,6 +103,7 @@
 	tide
 	flycheck-flow
 	elixir-mode
+	prettier-js
 	))
 
 (dolist (package my-packages)
@@ -116,9 +117,10 @@
 ;; Load up some sane defaults
 (require 'sane-defaults)
 
+(eval-after-load 'flycheck '(require 'setup-flycheck))
 (eval-after-load 'js2-mode '(require 'setup-js2))
 (eval-after-load 'tide-mode '(require 'setup-tide))
-(eval-after-load 'flycheck '(require 'setup-flycheck))
+(require 'setup-prettier)
 (require 'setup-ffip)
 (require 'setup-autocomplete)
 (require 'setup-magit)
@@ -218,9 +220,10 @@ Including indent-buffer, which should not be called automatically on save."
  '(frame-background-mode nil)
  '(package-selected-packages
 	 (quote
-		(elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+		(company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+ '(prettier-js-command "npm run prettier")
  '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
- '(wakatime-cli-path "/usr/local/Cellar/wakatime-cli/6.2.0/libexec/bin/wakatime"))
+ '(wakatime-python-bin nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
