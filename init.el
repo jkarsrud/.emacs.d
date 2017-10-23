@@ -104,6 +104,8 @@
 	flycheck-flow
 	elixir-mode
 	prettier-js
+	add-node-modules-path
+	cypher-mode
 	))
 
 (dolist (package my-packages)
@@ -220,8 +222,7 @@ Including indent-buffer, which should not be called automatically on save."
  '(frame-background-mode nil)
  '(package-selected-packages
 	 (quote
-		(company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
- '(prettier-js-command "npm run prettier")
+		(cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
  '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
  '(wakatime-python-bin nil))
 (custom-set-faces

@@ -18,15 +18,15 @@ clean buffer we're an order of magnitude laxer about checking."
     (when (file-executable-p eslint)
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
-(defun jkarsrud/use-jshint-from-node-modules ()
-	(let* ((root (locate-dominating-file
-								(or (buffer-file-name) default-directory)
-								"node_modules"))
-				 (jshint (and root
-											(expand-file-name "node_modules/.bin/jshint"
-																				root))))
-		(when (file-executable-p jshint)
-			(setq-local flycheck-javascript-jshint-executable jshint))))
+;; (defun jkarsrud/use-jshint-from-node-modules ()
+;; 	(let* ((root (locate-dominating-file
+;; 								(or (buffer-file-name) default-directory)
+;; 								"node_modules"))
+;; 				 (jshint (and root
+;; 											(expand-file-name "node_modules/.bin/jshint"
+;; 																				root))))
+;; 		(when (file-executable-p jshint)
+;; 			(setq-local flycheck-javascript-jshint-executable jshint))))
 
 ;; Each buffer gets its own idle-change-delay because of the
 ;; buffer-sensitive adjustment above.
