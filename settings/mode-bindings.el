@@ -14,4 +14,9 @@
 (add-to-list 'auto-mode-alist '("\\.hbs$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$" . web-mode))
 
+;; Markdown
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+
 (provide 'mode-bindings)

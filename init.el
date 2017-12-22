@@ -82,7 +82,6 @@
 	multiple-cursors
 	markdown-mode
 	neotree
-	color-theme-solarized
 	paredit
 	yasnippet
 	web-mode
@@ -106,6 +105,7 @@
 	prettier-js
 	add-node-modules-path
 	cypher-mode
+	solarized-theme
 	))
 
 (dolist (package my-packages)
@@ -182,10 +182,13 @@
 ;; Highlight current line
 (global-hl-line-mode 1)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
+;; make the fringe stand out from the background
+(setq solarized-distinct-fringe-background t)
 
 ;; Fire up the minor modes the theme we want going all the time everywhere
-(load-theme 'solarized t)
+(load-theme 'solarized-light t)
 (global-undo-tree-mode)
 (ido-mode t)
 
@@ -218,11 +221,14 @@ Including indent-buffer, which should not be called automatically on save."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+	 (quote
+		("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(frame-background-mode nil)
  '(package-selected-packages
 	 (quote
-		(cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+		(solarized-theme cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
  '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
  '(wakatime-python-bin nil))
 (custom-set-faces

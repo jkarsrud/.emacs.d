@@ -18,16 +18,6 @@ clean buffer we're an order of magnitude laxer about checking."
     (when (file-executable-p eslint)
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
-;; (defun jkarsrud/use-jshint-from-node-modules ()
-;; 	(let* ((root (locate-dominating-file
-;; 								(or (buffer-file-name) default-directory)
-;; 								"node_modules"))
-;; 				 (jshint (and root
-;; 											(expand-file-name "node_modules/.bin/jshint"
-;; 																				root))))
-;; 		(when (file-executable-p jshint)
-;; 			(setq-local flycheck-javascript-jshint-executable jshint))))
-
 ;; Each buffer gets its own idle-change-delay because of the
 ;; buffer-sensitive adjustment above.
 (make-variable-buffer-local 'flycheck-idle-change-delay)
@@ -36,7 +26,6 @@ clean buffer we're an order of magnitude laxer about checking."
           'magnars/adjust-flycheck-automatic-syntax-eagerness)
 
 (add-hook 'flycheck-mode-hook 'jkarsrud/use-eslint-from-node-modules)
-;; (add-hook 'flycheck-mode-hook 'jkarsrud/use-jshint-from-node-modules)
 
 ;; Remove newline checks, since they would trigger an immediate check
 ;; when we want the idle-change-delay to be in effect while editing.
@@ -60,6 +49,7 @@ up before you execute another command."
 
 (flycheck-add-mode 'javascript-eslint 'js2-mode)
 (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
+(flycheck-add-mode 'ruby-rubocop 'ruby-mode)
 
 (setq-default flycheck-indication-mode 'left-fringe)
 
