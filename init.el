@@ -150,7 +150,7 @@
 (editorconfig-mode 1)
 
 ;; Never insert tabs
-(set-default 'indent-tabs nil)
+(setq-default indent-tabs nil)
 (setq-default tab-width 2)
 
 (require 'mode-bindings)
@@ -184,11 +184,7 @@
 
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
-;; make the fringe stand out from the background
-(setq solarized-distinct-fringe-background t)
-
 ;; Fire up the minor modes the theme we want going all the time everywhere
-(load-theme 'solarized-light t)
 (global-undo-tree-mode)
 (ido-mode t)
 
@@ -203,6 +199,27 @@ Including indent-buffer, which should not be called automatically on save."
   (delete-trailing-whitespace)
   (indent-buffer))
 
+;; make the fringe stand out from the background
+(setq solarized-distinct-fringe-background t)
+
+(defvar dark-theme nil "The dark theme")
+(defvar light-theme nil "The light theme")
+(defvar active-theme nil "The active theme")
+
+(setq dark-theme 'solarized-dark
+			light-theme 'solarized-light
+			active-theme 'solarized-dark)
+
+(defun toggle-themes ()
+	"toggle themes"
+	(interactive)
+	(if (eq active-theme light-theme)
+			(setq active-theme dark-theme)
+		(setq active-theme light-theme))
+	(load-theme active-theme t))
+
+(load-theme active-theme t)
+
 ;;
 ;; Keybindings
 ;;
@@ -213,6 +230,9 @@ Including indent-buffer, which should not be called automatically on save."
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 (global-set-key (kbd "C-c C-n") 'cleanup-buffer)
+
+;; Theme switching
+(global-set-key (kbd "C-<f9>") 'toggle-themes)
 
 ;; CUSTOM
 
