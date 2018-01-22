@@ -142,7 +142,22 @@
 (setq fill-column 80)
 
 ;; Setup font and line stuff
-(set-face-attribute 'default nil :font "Fira Code" :height 140)
+(defvar font-height nil "The default font size")
+(defvar small-font nil "Is small font active")
+(setq font-height 140
+			small-font nil)
+
+(defun toggle-font-size ()
+	"toggle font size between 12 and 14 pt"
+	(interactive)
+	(if (bound-and-true-p small-font)
+			(setq font-height 140
+					 small-font nil)
+		(setq font-height 120
+				 small-font t))
+	(set-face-attribute 'default nil :font "Fira Code" :height font-height))
+
+(set-face-attribute 'default nil :font "Fira Code" :height font-height)
 (setq-default line-spacing 3)
 
 ;; Setup editorconfig
