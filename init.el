@@ -106,6 +106,11 @@
 	add-node-modules-path
 	cypher-mode
 	solarized-theme
+	lsp-mode
+	lsp-javascript-typescript
+	lsp-ui
+	company
+	company-lsp
 	))
 
 (dolist (package my-packages)
@@ -124,11 +129,14 @@
 (eval-after-load 'tide-mode '(require 'setup-tide))
 (require 'setup-prettier)
 (require 'setup-ffip)
-(require 'setup-autocomplete)
+;;(require 'setup-autocomplete)
 (require 'setup-magit)
 (require 'setup-wakatime)
 (require 'setup-nginx)
 (require 'setup-yasnippet)
+;; Language servers with autocompletes
+(require 'setup-lsp)
+(require 'setup-company-mode)
 ;;key bindings
 (require 'key-bindings);
 
@@ -144,7 +152,7 @@
 ;; Setup font and line stuff
 (defvar font-height nil "The default font size")
 (defvar small-font nil "Is small font active")
-(setq font-height 140
+(setq font-height 120
 			small-font nil)
 
 (defun toggle-font-size ()
@@ -263,7 +271,7 @@ Including indent-buffer, which should not be called automatically on save."
  '(frame-background-mode nil)
  '(package-selected-packages
 	 (quote
-		(solarized-theme cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+		(company-lsp lsp-ui company-mode lsp-javascript-typescript lsp-mode solarized-theme cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
  '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
  '(wakatime-python-bin nil))
 (custom-set-faces
