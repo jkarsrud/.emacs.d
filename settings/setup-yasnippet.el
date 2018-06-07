@@ -1,6 +1,6 @@
 (require 'yasnippet)
-(setq yas/root-directory "~/.emacs.d/snippets")
-(yas/load-directory yas/root-directory)
+
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
 (setq yas-verbosity 1)
 

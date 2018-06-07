@@ -1,5 +1,6 @@
 (require 'flycheck)
 (require 'flycheck-pos-tip)
+(require 'flycheck-flow)
 
 (defun magnars/adjust-flycheck-automatic-syntax-eagerness ()
   "Adjust how often we check for errors based on if there are any.
@@ -49,7 +50,11 @@ up before you execute another command."
 
 (flycheck-add-mode 'javascript-eslint 'js2-mode)
 (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
+(flycheck-add-mode 'javascript-eslint 'rjsx-mode)
 (flycheck-add-mode 'ruby-rubocop 'ruby-mode)
+
+(flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
+(flycheck-add-next-checker 'javascript-flow 'javascript-flow-coverage)
 
 (setq-default flycheck-indication-mode 'left-fringe)
 

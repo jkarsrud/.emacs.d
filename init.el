@@ -108,9 +108,14 @@
 	solarized-theme
 	lsp-mode
 	lsp-javascript-typescript
+	lsp-javascript-flow
 	lsp-ui
 	company
 	company-lsp
+	add-node-modules-path
+	oceanic-theme
+	company-flow
+	magithub
 	))
 
 (dolist (package my-packages)
@@ -131,7 +136,7 @@
 (require 'setup-ffip)
 ;;(require 'setup-autocomplete)
 (require 'setup-magit)
-(require 'setup-wakatime)
+;;(require 'setup-wakatime)
 (require 'setup-nginx)
 (require 'setup-yasnippet)
 ;; Language servers with autocompletes
