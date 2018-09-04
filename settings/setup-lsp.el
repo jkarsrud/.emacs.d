@@ -7,6 +7,6 @@
 (add-hook 'js2-mode-hook #'lsp-javascript-typescript-enable)
 (add-hook 'rjsx-mode-hook #'lsp-javascript-typescript-enable)
 
-(setq lsp-ui-sideline-show-symbol nil)
+(setq-default lsp-ui-sideline-show-hover nil)
 
 (provide 'setup-lsp)
