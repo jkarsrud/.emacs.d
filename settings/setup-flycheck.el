@@ -27,6 +27,7 @@ clean buffer we're an order of magnitude laxer about checking."
           'magnars/adjust-flycheck-automatic-syntax-eagerness)
 
 ;;(add-hook 'flycheck-mode-hook 'jkarsrud/use-eslint-from-node-modules)
+(add-hook 'flycheck-mode-hook #'add-node-modules-path)
 
 ;; Remove newline checks, since they would trigger an immediate check
 ;; when we want the idle-change-delay to be in effect while editing.
