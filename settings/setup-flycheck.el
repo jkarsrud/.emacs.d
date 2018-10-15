@@ -26,8 +26,9 @@ clean buffer we're an order of magnitude laxer about checking."
 (add-hook 'flycheck-after-syntax-check-hook
           'magnars/adjust-flycheck-automatic-syntax-eagerness)
 
-;;(add-hook 'flycheck-mode-hook 'jkarsrud/use-eslint-from-node-modules)
-(add-hook 'flycheck-mode-hook #'add-node-modules-path)
+(add-hook 'flycheck-mode-hook 'jkarsrud/use-eslint-from-node-modules)
+(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
+;; (add-hook 'flycheck-mode-hook #'add-node-modules-path)
 
 ;; Remove newline checks, since they would trigger an immediate check
 ;; when we want the idle-change-delay to be in effect while editing.
@@ -54,7 +55,7 @@ up before you execute another command."
 (flycheck-add-mode 'javascript-eslint 'rjsx-mode)
 (flycheck-add-mode 'ruby-rubocop 'ruby-mode)
 
-(flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
+;;(flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
 ;; (flycheck-add-next-checker 'javascript-flow 'javascript-flow-coverage)
 
 (setq-default flycheck-indication-mode 'left-fringe)

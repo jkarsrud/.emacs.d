@@ -109,6 +109,7 @@
 				nginx-mode
 				paredit
 				prettier-js
+				rainbow-delimiters
 				rjsx-mode
 				solarized-theme
 				tide
@@ -117,6 +118,7 @@
 				web-mode
 				yaml-mode
 				yasnippet
+				flycheck-color-mode-line
 				))
 
 (dolist (package my-packages)
@@ -133,6 +135,7 @@
 (eval-after-load 'flycheck '(require 'setup-flycheck))
 (eval-after-load 'js2-mode '(require 'setup-js2))
 (eval-after-load 'tide-mode '(require 'setup-tide))
+;; (require 'setup-powerline)
 (require 'setup-prettier)
 (require 'setup-ffip)
 ;;(require 'setup-autocomplete)
@@ -227,6 +230,8 @@
 (global-undo-tree-mode)
 (ido-mode t)
 
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 (defun indent-buffer ()
   (interactive)
   (indent-region (point-min) (point-max)))
@@ -295,7 +300,7 @@ Including indent-buffer, which should not be called automatically on save."
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
 	 (quote
-		(magithub elcord rainbow-delimiters ample-theme solarized-theme lsp-javascript-flow company-flow company-lsp lsp-ui company-mode lsp-javascript-typescript lsp-mode cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper powerline paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+		(flycheck-color-mode-line magithub elcord rainbow-delimiters ample-theme solarized-theme lsp-javascript-flow company-flow company-lsp lsp-ui company-mode lsp-javascript-typescript lsp-mode cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
  '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
