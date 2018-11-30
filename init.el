@@ -92,6 +92,7 @@
 				expand-region
 				find-file-in-project
 				flycheck
+				flycheck-color-mode-line
 				flycheck-flow
 				flycheck-pos-tip
 				ido
@@ -112,6 +113,7 @@
 				nginx-mode
 				paredit
 				prettier-js
+				projectile
 				rainbow-delimiters
 				rjsx-mode
 				solarized-theme
@@ -121,7 +123,6 @@
 				web-mode
 				yaml-mode
 				yasnippet
-				flycheck-color-mode-line
 				))
 
 (dolist (package my-packages)

@@ -18,7 +18,7 @@
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
 	 (quote
-		(flycheck-color-mode-line magithub elcord rainbow-delimiters ample-theme solarized-theme lsp-javascript-flow company-flow company-lsp lsp-ui company-mode lsp-javascript-typescript lsp-mode cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+		(projectile flycheck-color-mode-line magithub elcord rainbow-delimiters ample-theme solarized-theme lsp-javascript-flow company-flow company-lsp lsp-ui company-mode lsp-javascript-typescript lsp-mode cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
  '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
@@ -53,3 +53,9 @@
 	 ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])
  '(xterm-color-names-bright
 	 ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
