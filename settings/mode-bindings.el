@@ -19,4 +19,7 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
+;; PHP
+(add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
+
 (provide 'mode-bindings)
