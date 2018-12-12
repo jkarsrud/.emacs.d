@@ -74,7 +74,6 @@
 (setq my-packages
       '(
 				add-node-modules-path
-				ample-theme
 				auto-complete
 				cider
 				clojure-mode
@@ -109,12 +108,12 @@
 				multiple-cursors
 				neotree
 				nginx-mode
+				one-themes
 				paredit
 				prettier-js
 				projectile
 				rainbow-delimiters
 				rjsx-mode
-				solarized-theme
 				tide
 				undo-tree
 				wakatime-mode
@@ -252,9 +251,9 @@ Including indent-buffer, which should not be called automatically on save."
 (defvar light-theme nil "The light theme")
 (defvar active-theme nil "The active theme")
 
-(setq dark-theme 'ample
-			light-theme 'ample-light
-			active-theme 'ample)
+(setq dark-theme 'one-dark
+			light-theme 'one-light
+			active-theme 'one-dark)
 
 (defun toggle-themes ()
 	"toggle themes"
