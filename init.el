@@ -101,8 +101,6 @@
 				json
 				json-mode
 				less-css-mode
-				lsp-javascript-flow
-				lsp-javascript-typescript
 				lsp-mode
 				lsp-ui
 				magit
