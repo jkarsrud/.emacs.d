@@ -54,6 +54,7 @@ up before you execute another command."
 (flycheck-add-mode 'javascript-eslint 'js2-mode)
 (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
 (flycheck-add-mode 'javascript-eslint 'rjsx-mode)
+(flycheck-add-mode 'javascript-eslint 'typescript-mode)
 (flycheck-add-mode 'ruby-rubocop 'ruby-mode)
 
 (setq-default flycheck-indication-mode 'left-fringe)

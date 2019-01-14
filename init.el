@@ -12,10 +12,11 @@
 (setq settings-dir
       (expand-file-name "settings" user-emacs-directory))
 (setq projects-dir
-			(expand-file-name "projects" user-emacs-directory))
+      (expand-file-name "projects" user-emacs-directory))
 
 (add-to-list 'load-path settings-dir)
 (add-to-list 'load-path projects-dir)
+;;(add-to-list 'load-path "~/.local/share/icons-in-terminal/")
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
@@ -79,10 +80,12 @@
 				clojure-mode
 				coffee-mode
 				company
+				company-box
 				company-flow
 				company-lsp
 				csharp-mode
 				cypher-mode
+				diminish
 				editorconfig
 				elcord
 				elixir-mode
@@ -244,9 +247,6 @@ Including indent-buffer, which should not be called automatically on save."
   (delete-trailing-whitespace)
   (indent-buffer))
 
-;; make the fringe stand out from the background
-(setq solarized-distinct-fringe-background t)
-
 (defvar dark-theme nil "The dark theme")
 (defvar light-theme nil "The light theme")
 (defvar active-theme nil "The active theme")
@@ -264,6 +264,14 @@ Including indent-buffer, which should not be called automatically on save."
 	(load-theme active-theme t))
 
 (load-theme active-theme t)
+
+(diminish 'yas-minor-mode)
+(diminish 'undo-tree-mode)
+(diminish 'prettier-js-mode "pretty")
+(diminish 'company-box-mode)
+(diminish 'company-mode " C")
+(diminish 'editorconfig-mode " EC")
+(diminish 'projectile-mode " Project")
 
 ;;
 ;; Keybindings

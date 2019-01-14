@@ -8,5 +8,6 @@
 (add-hook 'typescript-mode-hook 'lsp)
 
 (setq-default lsp-ui-sideline-show-hover nil)
+(setq lsp-prefer-flymake nil)
 
 (provide 'setup-lsp)
