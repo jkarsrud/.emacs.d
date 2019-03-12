@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ember computed import
+# key: emcim
+# group: ember
+# --
+import { computed } from '@ember-decorators/object';

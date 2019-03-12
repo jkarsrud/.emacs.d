@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ember service inject
+# key: emsin
+# group: ember
+# --
+@service ${1:property}!: ${2:type};

@@ -123,6 +123,7 @@
 				web-mode
 				yaml-mode
 				yasnippet
+				yasnippet-snippets
 				))
 
 (dolist (package my-packages)
@@ -138,7 +139,7 @@
 
 (eval-after-load 'flycheck '(require 'setup-flycheck))
 (eval-after-load 'js2-mode '(require 'setup-js2))
-(eval-after-load 'tide-mode '(require 'setup-tide))
+;; (eval-after-load 'tide-mode '(require 'setup-tide))
 ;; (require 'setup-powerline)
 (require 'setup-prettier)
 (require 'setup-ffip)

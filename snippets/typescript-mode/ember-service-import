@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ember-service-import
+# key: emsim
+# group: ember
+# --
+import { inject as service } from '@ember-decorators/service';
