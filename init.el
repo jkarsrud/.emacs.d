@@ -92,11 +92,13 @@
 				emojify
 				exec-path-from-shell
 				expand-region
-				find-file-in-project
+				;;find-file-in-project
 				flycheck
 				flycheck-color-mode-line
 				flycheck-flow
 				flycheck-pos-tip
+				helm
+				helm-projectile
 				ido
 				js2-mode
 				js2-refactor
@@ -143,6 +145,7 @@
 ;; (require 'setup-powerline)
 (require 'setup-prettier)
 (require 'setup-ffip)
+(require 'setup-projectile)
 ;;(require 'setup-autocomplete)
 (require 'setup-magit)
 ;;(require 'setup-wakatime)
@@ -208,6 +211,8 @@
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
+(setq web-mode-enable-current-element-highlight t)
+(setq web-mode-enable-html-entities-fontification nil)
 
 ;; Show me empty lines after buffer end
 (set-default 'indicate-empty-lines t)
@@ -290,3 +295,14 @@ Including indent-buffer, which should not be called automatically on save."
 (global-set-key (kbd "C-<f11>") 'toggle-font-size)
 (global-set-key (kbd "C-S-<f11>") 'toggle-font-size-large)
 
+(defun eslint-fix-file ()
+  (interactive)
+  (message "eslint --fixing the file" (buffer-file-name))
+  (shell-command (concat "yarn eslint --fix " (buffer-file-name))))
+
+(defun eslint-fix-file-and-revert ()
+  (interactive)
+  (eslint-fix-file)
+  (revert-buffer t t))
+
+(global-set-key (kbd "C-c ! F") 'eslint-fix-file-and-revert)
