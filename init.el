@@ -138,6 +138,7 @@
 
 ;; Load up some sane defaults
 (require 'sane-defaults)
+(require 'setup-org)
 
 (eval-after-load 'flycheck '(require 'setup-flycheck))
 (eval-after-load 'js2-mode '(require 'setup-js2))
