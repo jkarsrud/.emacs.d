@@ -7,17 +7,17 @@
 This lets us fix any errors as quickly as possible, but in a
 clean buffer we're an order of magnitude laxer about checking."
   (setq flycheck-idle-change-delay
-        (if flycheck-current-errors 0.5 30.0)))
+        (if flycheck-current-errors 0.5 5.0)))
 
-(defun jkarsrud/use-eslint-from-node-modules ()
-  (let* ((root (locate-dominating-file
-                (or (buffer-file-name) default-directory)
-                "node_modules"))
-         (eslint (and root
-                      (expand-file-name "node_modules/.bin/eslint"
-                                        root))))
-    (when (file-executable-p eslint)
-      (setq-local flycheck-javascript-eslint-executable eslint))))
+;; (defun jkarsrud/use-eslint-from-node-modules ()
+;;   (let* ((root (locate-dominating-file
+;;                 (or (buffer-file-name) default-directory)
+;;                 "node_modules"))
+;;          (eslint (and root
+;;                       (expand-file-name "node_modules/.bin/eslint"
+;;                                         root))))
+;;     (when (file-executable-p eslint)
+;;       (setq-local flycheck-javascript-eslint-executable eslint))))
 
 ;; Each buffer gets its own idle-change-delay because of the
 ;; buffer-sensitive adjustment above.
@@ -26,9 +26,8 @@ clean buffer we're an order of magnitude laxer about checking."
 (add-hook 'flycheck-after-syntax-check-hook
           'magnars/adjust-flycheck-automatic-syntax-eagerness)
 
-(add-hook 'flycheck-mode-hook 'jkarsrud/use-eslint-from-node-modules)
+;; (add-hook 'flycheck-mode-hook 'jkarsrud/use-eslint-from-node-modules)
 (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
-;;(add-hook 'flycheck-mode-hook 'add-node-modules-path)
 
 ;; Remove newline checks, since they would trigger an immediate check
 ;; when we want the idle-change-delay to be in effect while editing.

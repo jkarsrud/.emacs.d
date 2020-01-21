@@ -97,6 +97,7 @@
 				flycheck-color-mode-line
 				flycheck-flow
 				flycheck-pos-tip
+				format-sql
 				helm
 				helm-projectile
 				ido

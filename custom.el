@@ -21,7 +21,7 @@
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
 	 (quote
-		(helm-projectile helm yasnippet-snippets magit-popup typescript diminish one-themes company-box js2-mode flycheck projectile flycheck-color-mode-line magithub elcord rainbow-delimiters ample-theme solarized-theme lsp-javascript-flow company-flow company-lsp lsp-ui company-mode lsp-javascript-typescript lsp-mode cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
+		(magit-gitflow helm-rg ripgrep format-sql sql-indent helm-projectile helm yasnippet-snippets magit-popup typescript diminish one-themes company-box js2-mode flycheck projectile flycheck-color-mode-line magithub elcord rainbow-delimiters ample-theme solarized-theme lsp-javascript-flow company-flow company-lsp lsp-ui company-mode lsp-javascript-typescript lsp-mode cypher-mode add-node-modules-path company prettier-js elixir-mode flycheck-flow tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor flycheck-pos-tip find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets)))
  '(safe-local-variable-values (quote ((js2-basic-offset . 2))))
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")

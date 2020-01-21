@@ -41,6 +41,7 @@
 (add-hook 'rjsx-mode-hook (lambda () (flycheck-mode 1)))
 
 (add-hook 'js2-mode-hook #'add-node-modules-path)
+(add-hook 'typescript-mode-hook #'add-node-modules-path)
 
 (require 'js2-refactor)
 (js2r-add-keybindings-with-prefix "C-x C-m")
