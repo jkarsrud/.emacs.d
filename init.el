@@ -61,7 +61,7 @@
 
 ;; Add the fantastic marmalade package repository to your lists to access hundreds of packages
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/package/")
 			 ("melpa" . "http://melpa.org/packages/")))
 
 (dolist (source package-archives)
@@ -75,14 +75,13 @@
 (setq my-packages
       '(
 				add-node-modules-path
+				atom-one-dark-theme
 				auto-complete
 				cider
 				clojure-mode
 				coffee-mode
 				company
 				company-box
-				company-flow
-				company-lsp
 				csharp-mode
 				cypher-mode
 				diminish
@@ -182,7 +181,7 @@
 					 small-font nil)
 		(setq font-height 120
 				 small-font t))
-	(set-face-attribute 'default nil :font "Fira Code" :height font-height))
+	(set-face-attribute 'default nil :font "MesloLGS NF" :height font-height))
 
 (defun toggle-font-size-large ()
 	"toggle font size between 12 and 14 pt"
@@ -192,9 +191,9 @@
 					 small-font nil)
 		(setq font-height 180
 				 small-font t))
-	(set-face-attribute 'default nil :font "Fira Code" :height font-height))
+	(set-face-attribute 'default nil :font "MesloLGS NF" :height font-height))
 
-(set-face-attribute 'default nil :font "Fira Code" :height font-height)
+(set-face-attribute 'default nil :font "MesloLGS NF" :height font-height)
 (setq-default line-spacing 4)
 
 ;; Setup editorconfig
@@ -259,7 +258,7 @@ Including indent-buffer, which should not be called automatically on save."
 (defvar light-theme nil "The light theme")
 (defvar active-theme nil "The active theme")
 
-(setq dark-theme 'one-dark
+(setq dark-theme 'atom-one-dark
 			light-theme 'one-light
 			active-theme 'one-dark)
 

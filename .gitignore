@@ -19,3 +19,8 @@ site-lisp/adventur-mode
 ido.last
 ac-comphist.dat
 projectile-bookmarks.eld
+projectile.cache
+
+.cache
+recentf
+transient
