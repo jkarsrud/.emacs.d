@@ -1,21 +1,26 @@
-;; turn off some defaults
+;; Turn off some defaults
+;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (setq use-dialog-box nil)
 
+
 ;; No splash screen please ... jeez
 (setq inhibit-startup-message t)
 
-;;(add-to-list 'load-path user-emacs-directory)
 
+;; Set path to dependencies
 (setq settings-dir
       (expand-file-name "settings" user-emacs-directory))
+
 (setq projects-dir
       (expand-file-name "projects" user-emacs-directory))
 
 (add-to-list 'load-path settings-dir)
 (add-to-list 'load-path projects-dir)
+
+;;(add-to-list 'load-path user-emacs-directory)
 ;;(add-to-list 'load-path "~/.local/share/icons-in-terminal/")
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -61,15 +66,18 @@
 
 ;; Add the fantastic marmalade package repository to your lists to access hundreds of packages
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/package/")
-			 ("melpa" . "http://melpa.org/packages/")))
 
-(dolist (source package-archives)
-  (add-to-list 'package-archives source t))
+;; Add melpa to package repos
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+;; Something about this is needed for some versions of Emacs or something
+;;(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (package-initialize)
 
-(package-refresh-contents)
+(package-refresh-contents)(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
+  (package-refresh-contents))
 
 ;; Automatically install a bunch of useful packages. You should look read up about these.
 (setq my-packages
@@ -79,10 +87,8 @@
 				auto-complete
 				cider
 				clojure-mode
-				coffee-mode
 				company
 				company-box
-				csharp-mode
 				cypher-mode
 				diminish
 				editorconfig
@@ -91,7 +97,6 @@
 				emojify
 				exec-path-from-shell
 				expand-region
-				;;find-file-in-project
 				flycheck
 				flycheck-color-mode-line
 				flycheck-flow
@@ -121,7 +126,7 @@
 				rjsx-mode
 				tide
 				undo-tree
-				wakatime-mode
+				;;wakatime-mode
 				web-mode
 				yaml-mode
 				yasnippet
@@ -145,7 +150,7 @@
 ;; (eval-after-load 'tide-mode '(require 'setup-tide))
 ;; (require 'setup-powerline)
 (require 'setup-prettier)
-(require 'setup-ffip)
+;;(require 'setup-ffip)
 (require 'setup-projectile)
 ;;(require 'setup-autocomplete)
 (require 'setup-magit)
@@ -285,7 +290,7 @@ Including indent-buffer, which should not be called automatically on save."
 ;;
 
 ;; Find file in project
-(global-set-key (kbd "C-x o") 'find-file-in-project)
+;;(global-set-key (kbd "C-x o") 'find-file-in-project)
 
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
