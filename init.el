@@ -112,6 +112,7 @@
 				less-css-mode
 				lsp-mode
 				lsp-ui
+				lsp-tailwindcss
 				magit
 				magithub
 				markdown-mode
@@ -148,7 +149,6 @@
 (eval-after-load 'flycheck '(require 'setup-flycheck))
 (eval-after-load 'js2-mode '(require 'setup-js2))
 ;; (eval-after-load 'tide-mode '(require 'setup-tide))
-;; (require 'setup-powerline)
 (require 'setup-prettier)
 ;;(require 'setup-ffip)
 (require 'setup-projectile)
@@ -312,3 +312,9 @@ Including indent-buffer, which should not be called automatically on save."
   (revert-buffer t t))
 
 (global-set-key (kbd "C-c ! F") 'eslint-fix-file-and-revert)
+
+;; Colorize output from compilers like tsc
+(require 'ansi-color)
+(defun colorize-compilation-buffer ()
+  (ansi-color-apply-on-region compilation-filter-start (point-max)))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
