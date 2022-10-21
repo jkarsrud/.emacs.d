@@ -5,6 +5,7 @@
 ;; JS
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.mjs$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.eslintrc$" . json-mode))
