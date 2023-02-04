@@ -157,6 +157,7 @@
 ;;(require 'setup-wakatime)
 (require 'setup-nginx)
 (require 'setup-yasnippet)
+(require 'setup-web-mode)
 ;; Language servers with autocompletes
 (require 'setup-lsp)
 (require 'setup-company-mode)
@@ -279,11 +280,12 @@ Including indent-buffer, which should not be called automatically on save."
 
 (diminish 'yas-minor-mode)
 (diminish 'undo-tree-mode)
-(diminish 'prettier-js-mode "pretty")
+(diminish 'prettier-js-mode "pjs")
 (diminish 'company-box-mode)
 (diminish 'company-mode " C")
 (diminish 'editorconfig-mode " EC")
-(diminish 'projectile-mode " Project")
+(diminish 'projectile-mode " P")
+(diminish 'flycheck-mode " lint")
 
 ;;
 ;; Keybindings
@@ -300,6 +302,8 @@ Including indent-buffer, which should not be called automatically on save."
 (global-set-key (kbd "C-<f9>") 'toggle-themes)
 (global-set-key (kbd "C-<f11>") 'toggle-font-size)
 (global-set-key (kbd "C-S-<f11>") 'toggle-font-size-large)
+
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 
 (defun eslint-fix-file ()
   (interactive)

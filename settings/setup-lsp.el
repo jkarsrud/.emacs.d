@@ -6,6 +6,7 @@
 (add-hook 'typescript-mode-hook 'lsp-deferred)
 (add-hook 'elixir-mode-hook 'lsp-deferred)
 (add-hook 'web-mode-hook 'lsp-deferred)
+(add-hook 'html-mode-hook 'lsp-deferred);
 
 (setq-default lsp-ui-sideline-show-hover nil)
 (setq lsp-prefer-flymake nil)
@@ -21,7 +22,9 @@
 (setq lsp-tailwindcss-add-on-mode t)
 
 ;; Elixir LSP-stuff
-(setq lsp-elixir-local-server-command "~/lsp-servers/elixir-ls/language_server.sh")
-(add-to-list 'lsp-language-id-configuration '(".*\\.eex$" . "html"))
+;;(setq lsp-elixir-local-server-command "~/lsp-servers/elixir-ls/language_server.sh")
+;;(add-to-list 'lsp-language-id-configuration '(".*\\.heex$" . "html"))
+
+;;(setq 'lsp-language-id-configuration (remove '(".*\\.heex$" . "html") 'lsp-language-id-configuration))
 
 (provide 'setup-lsp)
