@@ -66,16 +66,21 @@
   (packages-install
    '(
      company
+     company-box
+     dash
      diminish
      editorconfig
+     helm-projectile
      flycheck
      flycheck-color-mode-line
      flycheck-flow
      flycheck-pos-tip
      js2-mode
+     js2-refactor
      lsp-mode
      lsp-ui
      magit
+     magit-gitflow
      markdown-mode
      one-themes
      prettier-js
@@ -90,12 +95,20 @@
    (package-refresh-contents)
    (init--install-packages)))
 
+;; Start with going sane
 (require 'sane-defaults)
+
+;; Theme setup
+(require 'load-theme)
 
 ;; Setup environment variables from the user's shell.
 (when is-mac
   (require-package 'exec-path-from-shell)
   (exec-path-from-shell-initialize))
+
+;; Setup editorconfig
+(require 'editorconfig)
+(editorconfig-mode 1)
 
 
 (eval-after-load 'flycheck '(require 'setup-flycheck))
@@ -108,11 +121,24 @@
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+;; Load in rainbow delimiters on every prog mode
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 ;; Custom key bindings
 (require 'key-bindings)
 
 ;; Custom mode bindings
 (require 'mode-bindings)
+
+;; Diminish all of the modes
+(diminish 'yas-minor-mode)
+(diminish 'undo-tree-mode)
+(diminish 'prettier-js-mode "pjs")
+(diminish 'company-box-mode)
+(diminish 'company-mode " C")
+(diminish 'editorconfig-mode " EC")
+(diminish 'projectile-mode " P")
+(diminish 'flycheck-mode " lint")
 
 (defvar undo-directory (concat user-emacs-directory "undo/")
   "Directory to save undo history files.")

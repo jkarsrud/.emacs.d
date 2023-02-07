@@ -9,6 +9,9 @@
                            (invert-face 'mode-line)
                            (run-with-timer 0.05 nil 'invert-face 'mode-line)))
 
+;; Display line number column
+(global-linum-mode 1)
+
 ;; Highlight current line
 (global-hl-line-mode 1)
 
@@ -27,20 +30,5 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
   (blink-cursor-mode -1))
-
-(load-theme 'one-dark t)
-
-;; Diminish all of the modes
-(diminish 'yas-minor-mode)
-(diminish 'undo-tree-mode)
-(diminish 'prettier-js-mode "pjs")
-(diminish 'company-box-mode)
-(diminish 'company-mode " C")
-(diminish 'editorconfig-mode " EC")
-(diminish 'projectile-mode " P")
-(diminish 'flycheck-mode " lint")
-
-;; Load in rainbow delimiters on every prog mode
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (provide 'appearance)
