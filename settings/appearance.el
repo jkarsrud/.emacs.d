@@ -9,8 +9,7 @@
                            (invert-face 'mode-line)
                            (run-with-timer 0.05 nil 'invert-face 'mode-line)))
 
-;; Display line number column
-(global-linum-mode 1)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
 ;; Highlight current line
 (global-hl-line-mode 1)
@@ -30,5 +29,7 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
   (blink-cursor-mode -1))
+
+(setq-default line-spacing 2)
 
 (provide 'appearance)
