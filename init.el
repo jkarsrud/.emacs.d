@@ -71,6 +71,7 @@
      diminish
      editorconfig
      helm-projectile
+     fira-code-mode
      flycheck
      flycheck-color-mode-line
      flycheck-flow
@@ -110,6 +111,8 @@
 (require 'editorconfig)
 (editorconfig-mode 1)
 
+(global-fira-code-mode)
+
 
 (eval-after-load 'flycheck '(require 'setup-flycheck))
 (eval-after-load 'js2-mode '(require 'setup-js2))
@@ -139,6 +142,7 @@
 (diminish 'editorconfig-mode " EC")
 (diminish 'projectile-mode " P")
 (diminish 'flycheck-mode " lint")
+(diminish 'fira-code-mode)
 
 (defvar undo-directory (concat user-emacs-directory "undo/")
   "Directory to save undo history files.")
