@@ -70,14 +70,16 @@
      dash
      diminish
      editorconfig
-     helm-projectile
      fira-code-mode
      flycheck
      flycheck-color-mode-line
      flycheck-flow
      flycheck-pos-tip
+     helm-projectile
+     ido
      js2-mode
      js2-refactor
+     json-mode
      lsp-mode
      lsp-ui
      magit
@@ -88,6 +90,7 @@
      projectile
      rainbow-delimiters
      undo-tree
+     yaml-mode
      )))
 
 (condition-case nil
@@ -113,6 +116,7 @@
 
 (global-fira-code-mode)
 
+(require 'setup-ido)
 
 (eval-after-load 'flycheck '(require 'setup-flycheck))
 (eval-after-load 'js2-mode '(require 'setup-js2))
@@ -143,6 +147,8 @@
 (diminish 'projectile-mode " P")
 (diminish 'flycheck-mode " lint")
 (diminish 'fira-code-mode)
+
+(require 'font-setup)
 
 (defvar undo-directory (concat user-emacs-directory "undo/")
   "Directory to save undo history files.")
