@@ -16,6 +16,9 @@
 (global-set-key (kbd "C-x m") 'magit-status-fullscreen)
 (autoload 'magit-status-fullscreen "magit")
 
+;; Company
+(global-set-key (kbd "s-SPC") 'company-complete)
+
 ;;Window switching
 (windmove-default-keybindings)
 

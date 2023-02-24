@@ -125,6 +125,7 @@
 (require 'setup-magit)
 (require 'setup-company-mode)
 (require 'setup-lsp)
+(require 'setup-yasnippet)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
@@ -140,7 +141,7 @@
 ;; Diminish all of the modes
 (diminish 'yas-minor-mode)
 (diminish 'undo-tree-mode)
-(diminish 'prettier-js-mode "pjs")
+(diminish 'prettier-js-mode "p.js")
 (diminish 'company-box-mode)
 (diminish 'company-mode " C")
 (diminish 'editorconfig-mode " EC")
