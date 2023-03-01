@@ -7,7 +7,7 @@
 This lets us fix any errors as quickly as possible, but in a
 clean buffer we're an order of magnitude laxer about checking."
   (setq flycheck-idle-change-delay
-        (if flycheck-current-errors 0.5 5.0)))
+        (if flycheck-current-errors 0.3 3.0)))
 
 ;; (defun jkarsrud/use-eslint-from-node-modules ()
 ;;   (let* ((root (locate-dominating-file
