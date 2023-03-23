@@ -4,7 +4,8 @@
 
 ;; JS
 (autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.[jt]sx?$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx?$" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.[mc]js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
@@ -22,5 +23,8 @@
 
 ;; PHP
 (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
+
+;; GROQ
+(add-to-list 'auto-mode-alist '("\\.groq$" . groq-mode-hook))
 
 (provide 'mode-bindings)

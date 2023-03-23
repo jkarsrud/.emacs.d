@@ -13,5 +13,7 @@
 (add-hook 'scss-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'css-mode-hook 'prettier-js-mode)
+(add-hook 'groq-mode-hook 'prettier-js-mode)
 
 (provide 'setup-prettier)
+;;; setup-prettier.el ends here

@@ -1,6 +1,5 @@
 (require 'flycheck)
-(require 'flycheck-pos-tip)
-(require 'flycheck-flow)
+(require 'flycheck-indicator)
 
 (defun magnars/adjust-flycheck-automatic-syntax-eagerness ()
   "Adjust how often we check for errors based on if there are any.
@@ -27,17 +26,15 @@ clean buffer we're an order of magnitude laxer about checking."
           'magnars/adjust-flycheck-automatic-syntax-eagerness)
 
 ;; (add-hook 'flycheck-mode-hook 'jkarsrud/use-eslint-from-node-modules)
-(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
+;;(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
+
+(add-hook 'flycheck-mode-hook 'flycheck-indicator-mode)
 
 ;; Remove newline checks, since they would trigger an immediate check
 ;; when we want the idle-change-delay to be in effect while editing.
 (setq flycheck-check-syntax-automatically '(save
                                             idle-change
                                             mode-enabled))
-
-(eval-after-load 'flycheck
-  '(custom-set-variables
-    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
 (defun flycheck-handle-idle-change ()
   "Handle an expired idle time since the last change.

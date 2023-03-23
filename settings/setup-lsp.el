@@ -1,4 +1,5 @@
 (require 'lsp-mode)
+(require 'lsp-ui)
 ;; mode hooks
 (add-hook 'js-mode-hook 'lsp-deferred)
 (add-hook 'js2-mode-hook 'lsp-deferred)
@@ -8,7 +9,9 @@
 (add-hook 'web-mode-hook 'lsp-deferred)
 (add-hook 'html-mode-hook 'lsp-deferred);
 
+
 (setq-default lsp-ui-sideline-show-hover nil)
+
 (setq lsp-prefer-flymake nil)
 
 ;; Because of LSP, we need to bump our GC threshold
@@ -20,6 +23,13 @@
 (setq lsp-completion-provider :capf)
 
 (setq lsp-tailwindcss-add-on-mode t)
+
+(setq lsp-ui-doc-enable t)
+(setq lsp-ui-peek-enable t)
+
+(setq lsp-modeline-diagnostics-enable t)
+(setq lsp-modeline-code-actions-segments '(count name))
+
 
 ;; Elixir LSP-stuff
 ;;(setq lsp-elixir-local-server-command "~/lsp-servers/elixir-ls/language_server.sh")

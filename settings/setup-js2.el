@@ -38,10 +38,12 @@
 ;;(add-hook 'js2-mode-hook #'js2-mode-toggle-warnings-and-errors)
 
 (add-hook 'js2-mode-hook (lambda () (flycheck-mode 1)))
+(add-hook 'js2-mode-hook (lambda () (setq mode-name "JS2")))
 (add-hook 'rjsx-mode-hook (lambda () (flycheck-mode 1)))
 
 (add-hook 'js2-mode-hook #'add-node-modules-path)
 (add-hook 'typescript-mode-hook #'add-node-modules-path)
+(add-hook 'typescript-mode-hook (lambda () (setq mode-name "TS")))
 
 (require 'js2-refactor)
 (js2r-add-keybindings-with-prefix "C-x C-m")

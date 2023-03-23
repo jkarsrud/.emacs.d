@@ -73,8 +73,7 @@
      fira-code-mode
      flycheck
      flycheck-color-mode-line
-     flycheck-flow
-     flycheck-pos-tip
+     flycheck-indicator
      helm-projectile
      ido
      js2-mode
@@ -89,7 +88,11 @@
      prettier-js
      projectile
      rainbow-delimiters
+     tree-sitter
+     tree-sitter-langs
+     typescript-mode
      undo-tree
+     vterm
      yaml-mode
      )))
 
@@ -126,6 +129,9 @@
 (require 'setup-company-mode)
 (require 'setup-lsp)
 (require 'setup-yasnippet)
+(require 'setup-tree-sitter)
+
+(require 'groq-mode)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
@@ -141,13 +147,16 @@
 ;; Diminish all of the modes
 (diminish 'yas-minor-mode)
 (diminish 'undo-tree-mode)
+(diminish 'tree-sitter-mode)
 (diminish 'prettier-js-mode "p.js")
 (diminish 'company-box-mode)
-(diminish 'company-mode " C")
-(diminish 'editorconfig-mode " EC")
-(diminish 'projectile-mode " P")
-(diminish 'flycheck-mode " lint")
+(diminish 'company-mode " c")
+(diminish 'editorconfig-mode " ec")
+(diminish 'projectile-mode " p")
+(diminish 'flycheck-mode " fc")
 (diminish 'fira-code-mode)
+(diminish 'subword-mode)
+(diminish 'lsp-mode "lsp")
 
 (require 'font-setup)
 

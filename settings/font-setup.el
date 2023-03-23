@@ -1,12 +1,12 @@
 (defvar font-height 120 "The default font size")
 (defvar small-font nil "Is small font active")
-(defvar font "Fira Code")
+(defvar font "SF Mono")
 
 (defun toggle-font-size ()
   "toggle font size between 12 and 14 pt"
   (interactive)
   (if (bound-and-true-p small-font)
-      (setq font-height 140
+      (setq font-height 150
 	    small-font nil)
     (setq font-height 120
 	  small-font t))
