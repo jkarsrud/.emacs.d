@@ -123,6 +123,9 @@
 ;; No electric indent
 (setq electric-indent-mode nil)
 
+;; Enable electric-pair-mode
+(setq electric-pair-mode t)
+
 ;; Nic says eval-expression-print-level needs to be set to nil (turned off) so
 ;; that you can always see what's happening. Nic is wrong.
 (setq eval-expression-print-level 100)
