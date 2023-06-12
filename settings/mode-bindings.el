@@ -13,8 +13,8 @@
 (add-to-list 'auto-mode-alist '("\\.prettierrc$" . json-mode))
 
 ;; Handlebars
-(add-to-list 'auto-mode-alist '("\\.hbs$" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.erb$" . html-mode))
 
 ;; Markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
