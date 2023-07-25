@@ -11,5 +11,6 @@
 (add-to-list 'projectile-other-file-alist '("js" "hbs"))
 (add-to-list 'projectile-other-file-alist '("hbs" "ts" "js"))
 (add-to-list 'projectile-other-file-alist '("ts" "ts" "js" "hbs"))
+(add-to-list 'projectile-other-file-alist '("js" "test.js"))
 
 (provide 'setup-projectile)
