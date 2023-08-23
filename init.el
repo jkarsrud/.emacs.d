@@ -5,7 +5,6 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (setq use-dialog-box nil)
 
-
 ;; Remove security vulnerability
 (eval-after-load "enriched"
   '(defun enriched-decode-display-prop (start end &optional param)
@@ -131,6 +130,7 @@
 (require 'setup-company-mode)
 (require 'setup-lsp)
 (require 'setup-yasnippet)
+(require 'setup-tree-sitter)
 
 (require 'groq-mode)
 

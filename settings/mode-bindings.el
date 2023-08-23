@@ -1,16 +1,17 @@
 ;; CSS
 (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
-(add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.less$" . css-ts-mode))
 
 ;; JS
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.jsx?$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx?$" . typescript-mode))
-(add-to-list 'auto-mode-alist '("\\.[mc]js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
-(add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
-(add-to-list 'auto-mode-alist '("\\.eslintrc$" . json-mode))
-(add-to-list 'auto-mode-alist '("\\.prettierrc$" . json-mode))
+;;(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.jsx?$" . js-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx?$" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.[mc]js$" . js-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.eslintrc$" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.prettierrc$" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.prettierrc$" . json-ts-mode))
 
 ;; Handlebars
 (add-to-list 'auto-mode-alist '("\\.hbs$" . web-mode))
