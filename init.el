@@ -15,6 +15,8 @@
 (setq inhibit-startup-message t)
 
 ;; Set path to dependencies
+(defvar site-lisp-dir)
+(defvar settings-dir)
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
 
@@ -78,6 +80,7 @@
      ido
      js2-mode
      js2-refactor
+     jsdoc
      json-mode
      lsp-mode
      lsp-ui
@@ -88,11 +91,10 @@
      prettier-js
      projectile
      rainbow-delimiters
-     tree-sitter
-     tree-sitter-langs
      typescript-mode
      undo-tree
      vterm
+     web-mode
      yaml-mode
      )))
 
@@ -129,7 +131,6 @@
 (require 'setup-company-mode)
 (require 'setup-lsp)
 (require 'setup-yasnippet)
-(require 'setup-tree-sitter)
 
 (require 'groq-mode)
 
@@ -147,7 +148,6 @@
 ;; Diminish all of the modes
 (diminish 'yas-minor-mode)
 (diminish 'undo-tree-mode)
-(diminish 'tree-sitter-mode)
 (diminish 'prettier-js-mode "p.js")
 (diminish 'company-box-mode)
 (diminish 'company-mode " c")
