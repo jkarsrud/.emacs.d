@@ -3,6 +3,7 @@
 ;; Code:
 ;; mode hooks
 (add-hook 'js-ts-mode-hook 'lsp-deferred)
+(add-hook 'json-ts-mode-hook 'lsp-deferred)
 (add-hook 'js2-mode-hook 'lsp-deferred)
 (add-hook 'rjsx-mode-hook 'lsp-deferred)
 (add-hook 'typescript-mode-hook 'lsp-deferred)

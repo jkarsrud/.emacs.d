@@ -1,9 +1,16 @@
+;;; package --- Summary
+;;; Commentary:
+;;
+;; This sets appearance of the UI, like theme, spacing, window systems etc
+
+;;; Code:
+(defvar color-theme-is-global)
+
 (setq font-lock-maximum-decoration t
       color-theme-is-global t
       truncate-partial-width-windows nil)
 
 ;; Don't beep. Don't visible-bell (fails on el capitan). Just blink the modeline on errors.
-
 (setq visible-bell nil)
 (setq ring-bell-function (lambda ()
                            (invert-face 'mode-line)
@@ -33,3 +40,4 @@
 (setq-default line-spacing 2)
 
 (provide 'appearance)
+;;; appearance.el ends here
