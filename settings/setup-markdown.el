@@ -1,3 +1,3 @@
 (require 'markdown-mode)
 
-(setq-default 'markdown-command 
+(setq-default 'markdown-command)

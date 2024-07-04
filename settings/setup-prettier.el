@@ -16,6 +16,8 @@
 (add-hook 'groq-mode-hook 'prettier-js-mode)
 (add-hook 'json-ts-mode-hook 'prettier-js-mode)
 (add-hook 'html-ts-mode-hook 'prettier-js-mode)
+(add-hook 'html-mode-hook 'prettier-js-mode)
+(add-hook 'css-mode-hook 'prettier-js-mode)
 
 (provide 'setup-prettier)
 ;;; setup-prettier.el ends here

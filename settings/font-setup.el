@@ -1,6 +1,6 @@
 (defvar font-height 120 "The default font size")
 (defvar small-font nil "Is small font active")
-(defvar font "SF Mono")
+(defvar font "Monaspace Argon")
 
 (defun toggle-font-size ()
   "toggle font size between 12 and 14 pt"

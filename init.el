@@ -60,6 +60,9 @@
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
 
+;; Keep scroll position
+(setq scroll-preserve-screen-position t)
+
 (require 'setup-package)
 
 ;; Install extensions if they're missing
@@ -71,6 +74,8 @@
      dash
      diminish
      editorconfig
+     emmet-mode
+     emojify
      fira-code-mode
      flycheck
      flycheck-color-mode-line
@@ -86,7 +91,9 @@
      magit
      magit-gitflow
      markdown-mode
+     mmm-mode
      one-themes
+     polymode
      prettier-js
      projectile
      rainbow-delimiters
@@ -95,6 +102,7 @@
      vterm
      web-mode
      yaml-mode
+     zen-mode
      )))
 
 (condition-case nil
@@ -122,22 +130,30 @@
 
 (require 'setup-ido)
 
-(eval-after-load 'flycheck '(require 'setup-flycheck))
+;;(eval-after-load 'flycheck '(require 'setup-flycheck))
 (eval-after-load 'js2-mode '(require 'setup-js2))
 (require 'setup-prettier)
 (require 'setup-projectile)
 (require 'setup-magit)
 (require 'setup-company-mode)
-(require 'setup-lsp)
+;;(require 'setup-lsp)
+(require 'setup-eglot)
 (require 'setup-yasnippet)
 (require 'setup-tree-sitter)
+(require 'setup-polymode)
 
 (require 'groq-mode)
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook #'global-emojify-mode)
 
 ;; Load in rainbow delimiters on every prog mode
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;; Initilize emmet for all markup modes
+(add-hook 'sgml-mode-hook 'emmet-mode)
+;; Special sauce for web-mode
+(add-hook 'web-mode-hook 'emmet-mode)
 
 ;; Custom key bindings
 (require 'key-bindings)
@@ -157,6 +173,11 @@
 (diminish 'fira-code-mode)
 (diminish 'subword-mode)
 (diminish 'lsp-mode "lsp")
+(diminish 'flymake-mode "FM")
+;;(diminish 'js-ts-mode "JS")
+(diminish 'emmet-mode "emm")
+
+(add-hook 'js-ts-mode-hook (lambda () (setq mode-name "JS")))
 
 (require 'font-setup)
 

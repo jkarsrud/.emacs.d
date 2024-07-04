@@ -13,6 +13,8 @@
         (json "https://github.com/tree-sitter/tree-sitter-json")
         (python "https://github.com/tree-sitter/tree-sitter-python")
         (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-        (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+        (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+        (yaml "https://github.com/ikatyang/tree-sitter-yaml")
+        (markdown "https://github.com/ikatyang/tree-sitter-markdown")))
 
 (provide 'setup-tree-sitter)
