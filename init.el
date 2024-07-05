@@ -174,7 +174,6 @@
 (diminish 'subword-mode)
 (diminish 'lsp-mode "lsp")
 (diminish 'flymake-mode "FM")
-;;(diminish 'js-ts-mode "JS")
 (diminish 'emmet-mode "emm")
 
 (add-hook 'js-ts-mode-hook (lambda () (setq mode-name "JS")))
