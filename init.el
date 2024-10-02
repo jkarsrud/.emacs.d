@@ -164,7 +164,7 @@
 ;; Diminish all of the modes
 (diminish 'yas-minor-mode)
 (diminish 'undo-tree-mode)
-(diminish 'prettier-js-mode "p.js")
+(diminish 'prettier-js-mode "pretty")
 (diminish 'company-box-mode)
 (diminish 'company-mode " c")
 (diminish 'editorconfig-mode " ec")
