@@ -4,8 +4,8 @@
 
 (define-innermode poly-js-html-innermode
   :mode 'html-mode
-  :head-matcher (rx "html" (char "`"))
-  :tail-matcher (rx (char "`"))
+  :head-matcher (rx "html" (char "\`'") (* (any space)))
+  :tail-matcher (rx (char "\`'"))
   :head-mode 'host
   :tail-mode 'host)
 

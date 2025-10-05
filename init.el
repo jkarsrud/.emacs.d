@@ -71,8 +71,10 @@
    '(
      company
      company-box
+     csproj-mode
      dash
      diminish
+     dotnet
      editorconfig
      emmet-mode
      emojify
@@ -144,6 +146,8 @@
 
 (require 'groq-mode)
 
+(require 'setup-dotnet)
+
 ;;(add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'after-init-hook #'global-emojify-mode)
 
@@ -154,6 +158,9 @@
 (add-hook 'sgml-mode-hook 'emmet-mode)
 ;; Special sauce for web-mode
 (add-hook 'web-mode-hook 'emmet-mode)
+
+;; Always show line numbers
+(global-display-line-numbers-mode t)
 
 ;; Custom key bindings
 (require 'key-bindings)

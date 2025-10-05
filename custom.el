@@ -19,9 +19,16 @@
  '(magit-commit-arguments '("--gpg-sign=FC458350C0F8EBCC"))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
-   '(polymode zen-mode mmm-mode eglot jsdoc vterm typescript-mode flycheck-indicator ido-mode fira-code-mode dash company-lsp zprint-mode whitespace-cleanup-mode wgrep visual-regexp string-edit-at-point smartparens simple-httpd restclient prodigy perspective nodejs-repl move-text kaocha-runner inflections ido-vertical-mode ido-completing-read+ ido-at-point hydra htmlize highlight-escape-sequences groovy-mode gist forge flycheck-joker flx-ido flx fill-column-indicator elisp-slime-nav edn dockerfile-mode deadgrep diff-hl css-eldoc clojure-mode-extra-font-locking jupyter lsp-tailwindcss clojure-mode atom-one-dark-theme ein magit-gitflow helm-rg ripgrep format-sql sql-indent helm-projectile helm yasnippet-snippets magit-popup typescript diminish one-themes company-box js2-mode flycheck projectile flycheck-color-mode-line magithub elcord rainbow-delimiters ample-theme solarized-theme lsp-ui company-mode lsp-javascript-typescript lsp-mode cypher-mode add-node-modules-path company prettier-js elixir-mode tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig csharp-mode color-theme-solarized cider auto-complete angular-snippets))
+   '(dotnet-mode dotnet csproj-mode eglot catppuccin-theme caddyfile-mode polymode zen-mode mmm-mode jsdoc vterm typescript-mode flycheck-indicator ido-mode fira-code-mode dash company-lsp zprint-mode whitespace-cleanup-mode wgrep visual-regexp string-edit-at-point smartparens simple-httpd restclient prodigy perspective nodejs-repl move-text kaocha-runner inflections ido-vertical-mode ido-completing-read+ ido-at-point hydra htmlize highlight-escape-sequences groovy-mode gist forge flycheck-joker flx-ido flx fill-column-indicator elisp-slime-nav edn dockerfile-mode deadgrep diff-hl css-eldoc clojure-mode-extra-font-locking jupyter lsp-tailwindcss clojure-mode atom-one-dark-theme ein magit-gitflow helm-rg ripgrep format-sql sql-indent helm-projectile helm yasnippet-snippets magit-popup typescript diminish one-themes company-box js2-mode flycheck projectile flycheck-color-mode-line magithub elcord rainbow-delimiters ample-theme solarized-theme lsp-ui company-mode lsp-javascript-typescript lsp-mode cypher-mode add-node-modules-path company prettier-js elixir-mode tide rjsx-mode coffee-mode nginx-mode nginx yaml-mode web-mode wakatime-mode undo-tree swiper paredit neotree markdown-mode magit less-css-mode json-mode js2-refactor find-file-in-project expand-region exec-path-from-shell emojify emmet-mode editorconfig color-theme-solarized cider auto-complete angular-snippets))
  '(safe-local-variable-values
-   '((flycheck-disabled-checkers emacs-lisp-checkdoc)
+   '((eval let
+           ((project-directory
+             (car
+              (dir-locals-find-file default-directory))))
+           (setq lsp-clients-typescript-server-args
+                 `("--tsserver-path" ,(concat project-directory ".yarn/sdks/typescript/bin/tsserver")
+                   "--stdio")))
+     (flycheck-disabled-checkers emacs-lisp-checkdoc)
      (js2-basic-offset . 2)))
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")

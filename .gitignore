@@ -31,3 +31,5 @@ transient
 /undo
 history
 /tree-sitter/
+
+eln-cache/

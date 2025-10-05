@@ -19,6 +19,9 @@
 ;; Company
 (global-set-key (kbd "s-SPC") 'company-complete)
 
+(global-set-key (kbd "C-x C-c") 'comment-region)
+(global-set-key (kbd "C-x C-u") 'uncomment-region)
+
 ;;Window switching
 (windmove-default-keybindings)
 
