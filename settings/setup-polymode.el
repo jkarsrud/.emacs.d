@@ -1,16 +1,31 @@
 (require 'polymode)
 
-(define-hostmode poly-js-html-hostmode :mode 'js-ts-mode)
+(define-hostmode poly-mjs-hostmode
+  :mode 'js-ts-mode)
 
-(define-innermode poly-js-html-innermode
+(define-innermode poly-mjs-html-innermode
   :mode 'html-mode
-  :head-matcher (rx "html" (char "\`'") (* (any space)))
-  :tail-matcher (rx (char "\`'"))
+  :head-matcher "html`"
+  :tail-matcher "`"
   :head-mode 'host
   :tail-mode 'host)
 
-(define-polymode poly-js-html-polymode 
-  :hostmode 'poly-js-html-hostmode 
-  :innermodes ('poly-js-html-innermode))
+(define-innermode poly-mjs-css-innermode
+  :mode 'css-ts-mode
+  :head-matcher "css`"
+  :tail-matcher "`"
+  :head-mode 'host
+  :tail-mode 'host)
+
+(define-innermode poly-mjs-style-innermode
+  :mode 'css-ts-mode
+  :head-matcher "<style>"
+  :tail-matcher "</style>"
+  :head-mode 'host
+  :tail-mode 'host)
+
+(define-polymode poly-mjs-mode
+  :hostmode 'poly-mjs-hostmode
+  :innermodes '(poly-mjs-html-innermode poly-mjs-css-innermode poly-mjs-style-innermode))
 
 (provide 'setup-polymode)
