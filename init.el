@@ -74,6 +74,7 @@
      csproj-mode
      dash
      diminish
+     doom-modeline
      dotnet
      emmet-mode
      emojify
@@ -93,6 +94,7 @@
      magit-gitflow
      markdown-mode
      mmm-mode
+     nerd-icons
      one-themes
      polymode
      prettier-js
@@ -146,6 +148,7 @@
 (require 'groq-mode)
 
 (require 'setup-dotnet)
+(require 'setup-modeline)
 
 ;;(add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'after-init-hook #'global-emojify-mode)
