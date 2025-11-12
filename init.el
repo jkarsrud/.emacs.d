@@ -75,7 +75,6 @@
      dash
      diminish
      dotnet
-     editorconfig
      emmet-mode
      emojify
      fira-code-mode
