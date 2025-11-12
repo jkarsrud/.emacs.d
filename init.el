@@ -69,6 +69,8 @@
 (defun init--install-packages ()
   (packages-install
    '(
+     all-the-icons
+     all-the-icons-dired
      company
      company-box
      csproj-mode
@@ -144,6 +146,7 @@
 (require 'setup-yasnippet)
 (require 'setup-tree-sitter)
 (require 'setup-polymode)
+(require 'setup-dired)
 
 (require 'groq-mode)
 
