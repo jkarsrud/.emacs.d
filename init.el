@@ -102,6 +102,7 @@
      prettier-js
      projectile
      rainbow-delimiters
+     treemacs
      typescript-mode
      undo-tree
      vterm
