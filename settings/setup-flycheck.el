@@ -54,6 +54,6 @@ up before you execute another command."
 (flycheck-add-mode 'ruby-rubocop 'ruby-mode)
 
 (setq-default flycheck-indication-mode 'left-fringe)
-(setq-default flycheck-eslint-args '("--ext" ".ts,.js"))
+(setq-default flycheck-eslint-args '("--ext" ".ts,.js,.mjs"))
 
 (provide 'setup-flycheck)
