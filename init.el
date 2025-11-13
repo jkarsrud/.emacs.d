@@ -93,7 +93,6 @@
      lsp-mode
      lsp-ui
      magit
-     magit-gitflow
      markdown-mode
      mmm-mode
      nerd-icons
