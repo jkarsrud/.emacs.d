@@ -1,9 +1,9 @@
 (defvar-local font-height 120 "The default font size")
 (defvar-local small-font nil "Is small font active")
-(defvar-local font "Monaspace Argon" "Buffer font")
+(defvar-local font (if is-mac "Monaspace Argon" "FiraCode Nerd Font") "Buffer font")
 ;; Modeline
 (defvar modeline-font-size 140 "Mode line font size")
-(defvar mode-font "Departure Mono" "Modeline font")
+(defvar mode-font (if is-mac "Departure Mono" "FiraCode Nerd Font") "Modeline font")
 
 (defun toggle-font-size ()
   "toggle font size between 12 and 14 pt"
