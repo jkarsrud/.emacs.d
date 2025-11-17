@@ -94,6 +94,7 @@
      lsp-ui
      magit
      markdown-mode
+     mermaid-mode
      mmm-mode
      nerd-icons
      one-themes
