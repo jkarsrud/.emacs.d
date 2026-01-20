@@ -24,6 +24,13 @@
   :head-mode 'host
   :tail-mode 'host)
 
+(define-innermode poly-mjs-script-innermode
+  :mode 'js-ts-mode
+  :head-matcher "<script"
+  :tail-matcher "</script>"
+  :head-mode 'host
+  :tail-mode 'host)
+
 (define-polymode poly-mjs-mode
   :hostmode 'poly-mjs-hostmode
   :innermodes '(poly-mjs-html-innermode poly-mjs-css-innermode poly-mjs-style-innermode))

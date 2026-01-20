@@ -17,7 +17,7 @@
 (add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.eslintrc$" . json-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.prettierrc$" . json-ts-mode))
-
+(add-to-list 'auto-mode-alist '("\\.mjs$" . poly-mjs-mode))
 
 ;; Handlebars
 (add-to-list 'auto-mode-alist '("\\.hbs$" . web-mode))
